@@ -1,0 +1,22 @@
+version: "3.3"
+services:
+  orderdb:
+    image: mysql:5.7
+    restart: always
+    container_name: orderdb
+    environment:
+      MYSQL_ROOT_PASSWORD: "db_manager_pws_0265"
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+    volumes:
+      - my-db:/var/lib/mysql
+    networks:
+      - app_network
+
+volumes:
+  my-db:
+
+networks:
+  app_network:
