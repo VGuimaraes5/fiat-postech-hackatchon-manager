@@ -6,7 +6,7 @@ namespace Hackathon.Manager.Api.Infra.Context;
 
 public class DataContext : DbContext
 {
-    public DbSet<EmployeeEntity>? Product { get; set; }
+    public DbSet<EmployeeEntity>? Employee { get; set; }
 
     public DataContext(DbContextOptions<DataContext> options) : base(options) { }
 
