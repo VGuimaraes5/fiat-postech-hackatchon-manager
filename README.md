@@ -1,6 +1,12 @@
 # fiap-postech-hackathon-manager
 
-## Example requests
+## OWASP
+
+Verificação: <a href="./assets/owasp/documento.html">Documento</a>
+
+## Examplos de request
+
+### POST: /employee
 
 ```json
 {
@@ -11,3 +17,10 @@
   "Password": "P@$$w0rd"
 }
 ```
+
+## Segurança
+
+Todos os dados dos funcionários são salvos de forma criptografada no banco de dados para proteger suas informações.
+
+Exemplo:
+<img src="./assets/imgs/encript.png"/>

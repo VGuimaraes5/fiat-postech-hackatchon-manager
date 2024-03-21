@@ -14,6 +14,14 @@ builder.Services
 
 var app = builder.Build();
 
+app.Use(async (context, next) =>
+{
+    context.Response.Headers.Add("X-Content-Type-Options", "nosniff");
+    context.Response.Headers.Add("x-frame-options", "DENY");
+
+    await next();
+});
+
 app.Services.ExecuteMigration();
 
 app.UseSwagger();
@@ -27,6 +35,6 @@ app.MapControllers();
 
 app.UseCors("CorsPolicy");
 
-await UserPoolUtils.SetValues(builder.Configuration);
+//await UserPoolUtils.SetValues(builder.Configuration);
 
 app.Run();

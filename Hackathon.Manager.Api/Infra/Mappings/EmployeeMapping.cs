@@ -1,5 +1,7 @@
 using Hackathon.Manager.Api.Domain.Entities;
+using Hackathon.Manager.Api.Infra.Utils;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.DataEncryption;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Hackathon.Manager.Api.Infra.Mappings;
@@ -29,11 +31,16 @@ public class EmployeeMapping : IEntityTypeConfiguration<EmployeeEntity>
             .HasIndex(p => p.UserIdentification)
             .IsUnique();
 
-        builder.Property(p => p.Cpf)
-               .HasColumnType("varchar(11)")
-               .HasConversion<string>(
-                    coreValue => coreValue.ToString(),
-                    efValue => efValue
-                );
+        builder
+            .Property(p => p.Email)
+            .IsEncrypted();
+
+        builder
+            .Property(p => p.Cpf)
+            .IsEncrypted();
+
+        builder
+            .Property(p => p.Name)
+            .IsEncrypted();
     }
 }
