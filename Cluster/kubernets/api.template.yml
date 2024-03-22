@@ -26,7 +26,7 @@ spec:
         env:
           - name: ASPNETCORE_URLS
             value: http://*:$appPort
-          - name: ConnectionStrings__ConnectionString
+          - name: ConnectionStrings__DefaultConnection
             value: $connectionString
           - name: Aws__PoolId
             value: $poolId
