@@ -13,7 +13,7 @@ RUN dotnet restore "Hackathon.Manager.Api.csproj" --disable-parallel
 RUN dotnet publish "Hackathon.Manager.Api.csproj" -c Release -o /app/publish --no-restore
 
 # inicio da etapa de publicação 
-FROM mcr.microsoft.com/dotnet/aspnet:6.0 
+FROM mcr.microsoft.com/dotnet/aspnet:7.0 
 
 # copia a build pronta para o servidor web
 WORKDIR /app
