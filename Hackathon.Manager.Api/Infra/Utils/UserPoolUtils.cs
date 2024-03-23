@@ -11,6 +11,7 @@ public class UserPoolUtils
 
     public static async Task SetValues(IConfiguration configuration)
     {
+        Console.WriteLine("aaaaaaa");
         var poolName = configuration["Aws:PoolName"] ?? throw new InvalidOperationException("Aws PoolName not found!");
         Console.WriteLine(poolName);
         using (var provider = new AmazonCognitoIdentityProviderClient(RegionEndpoint.USEast1))
