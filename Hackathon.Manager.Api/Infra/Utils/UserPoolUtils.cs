@@ -13,7 +13,7 @@ public class UserPoolUtils
     {
         var poolName = configuration["Aws:PoolName"] ?? throw new InvalidOperationException("Aws PoolName not found!");
 
-        using (var provider = new AmazonCognitoIdentityProviderClient(RegionEndpoint.USEast2))
+        using (var provider = new AmazonCognitoIdentityProviderClient(RegionEndpoint.USEast1))
         {
             UserPoolId = (await provider.ListUserPoolsAsync(new ListUserPoolsRequest()))
                 .UserPools.FirstOrDefault(x => x.Name == poolName)?.Id ?? throw new InvalidOperationException("User pool id not found!");
