@@ -20,6 +20,14 @@ public class CognitoService : ICognitoService
                     ClientId = UserPoolUtils.UserPoolClientId,
                     Username = employee.Email,
                     Password = password,
+                    UserAttributes = new List<AttributeType>
+                    {
+                        new AttributeType
+                        {
+                            Name = "name",
+                            Value = employee.Name 
+                        },
+                    }
                 });
 
                 await provider.AdminConfirmSignUpAsync(new AdminConfirmSignUpRequest
