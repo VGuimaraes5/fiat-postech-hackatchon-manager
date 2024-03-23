@@ -28,10 +28,8 @@ spec:
             value: http://*:$appPort
           - name: ConnectionStrings__DefaultConnection
             value: $connectionString
-          - name: Aws__PoolId
-            value: $poolId
-          - name: Aws__PoolClientId
-            value: $poolClientId
+          - name: Aws__PoolName
+            value: $poolName
         ports:
         - containerPort: $appPort
           name: manager
