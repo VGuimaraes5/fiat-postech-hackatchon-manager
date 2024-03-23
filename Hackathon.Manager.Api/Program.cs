@@ -35,6 +35,6 @@ app.MapControllers();
 
 app.UseCors("CorsPolicy");
 
-//await UserPoolUtils.SetValues(builder.Configuration);
+await UserPoolUtils.SetValues(builder.Configuration);
 
 app.Run();
