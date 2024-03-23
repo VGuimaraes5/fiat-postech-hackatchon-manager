@@ -13,7 +13,7 @@ public class CognitoService : ICognitoService
     {
         try
         {
-            using (var provider = new AmazonCognitoIdentityProviderClient(RegionEndpoint.USEast2))
+            using (var provider = new AmazonCognitoIdentityProviderClient(RegionEndpoint.USEast1))
             {
                 var signUpResult = await provider.SignUpAsync(new SignUpRequest
                 {
